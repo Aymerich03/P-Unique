@@ -49,18 +49,18 @@
 </head>
 <body>
     <div class="container">
-        <h2>Customize Your Dog Tag</h2>
+        <h2> "Personaliza la plaquita" </h2>
         <div class="dog-tag">
             <div id="tagText" class="tag-text">Your Text Here</div>
         </div>
-        <input type="text" id="textInput" placeholder="Enter text for the tag" maxlength="15" oninput="updateText()">
+        <input type="text" id="textInput" placeholder="¿Cuál es el nombre de tu patiamigo o patiamiga?" maxlength="15" oninput="updateText()">
     </div>
 
     <script>
         function updateText() {
             const textInput = document.getElementById('textInput').value;
             const tagText = document.getElementById('tagText');
-            tagText.textContent = textInput || "Your Text Here";
+            tagText.textContent = textInput || "";
         }
     </script>
 </body>
