@@ -4,58 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Tag Customizer</title>
+    <title>Personaliza la Placa de tu Mascota | PawTags</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+        /* General Styles */
+        body, html {
             margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #102820, #4C6444);
+            color: #CABA9C;
         }
-        .container {
+        
+        /* Header Section */
+        .header {
             text-align: center;
+            padding: 40px 20px;
+            background-color: #4D2D18;
+            color: #CABA9C;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        /* Main Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #CABA9C;
+            border-radius: 15px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+            color: #4D2D18;
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 24px;
+            color: #4D2D18;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Dog Tag Customization Box */
         .dog-tag {
             width: 300px;
             height: 150px;
-            background-image: url('./IMG_2544.png');
+            background-image: url('./IMG_2541_converted.png');
             background-size: cover;
             background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 20px 0;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             position: relative;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
         }
+
+        /* Text inside the tag */
         .tag-text {
-            font-size: 24px;
-            color: white;
+            font-size: 22px;
+            color: #CABA9C;
             font-weight: bold;
             text-align: center;
             position: absolute;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
         }
+
+        /* Input field */
         input {
-            padding: 10px;
+            padding: 12px;
             font-size: 18px;
             width: 80%;
             max-width: 300px;
+            border-radius: 8px;
+            border: 1px solid #8A6240;
+            background-color: #E0D4B4;
+            color: #4D2D18;
             margin-top: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CTA Button */
+        .cta-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #8A6240;
+            color: #CABA9C;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        .cta-button:hover {
+            background-color: #4D2D18;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #CABA9C;
+            background-color: #4D2D18;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
 <body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Bienvenido a PawTags</h1>
+        <p>¡Dale un toque especial a la plaquita de tu mejor amigo!</p>
+    </header>
+
+    <!-- Main Content Section -->
     <div class="container">
-        <h2> Personaliza la plaquita de tu pawamig@: </h2>
+        <h2 class="section-title">Personaliza la Placa de tu Mascota</h2>
+        
+        <!-- Dog Tag Customization Box -->
         <div class="dog-tag">
             <div id="tagText" class="tag-text">Tu texto irá aquí</div>
         </div>
+        
+        <!-- Input Field for Customization -->
         <input type="text" id="textInput" placeholder="Nombre de tu pawsitive amig@" maxlength="15" oninput="updateText()">
+        
+        <!-- Call-to-Action Button -->
+        <button class="cta-button" onclick="alert('¡Gracias por personalizar la placa de tu pawamig@!')">
+            ¡Ordenar Ahora!
+        </button>
     </div>
 
+    <!-- Footer Section -->
+    <footer class="footer">
+        © 2023 PawTags. Todos los derechos reservados.
+    </footer>
+
+    <!-- Script for Real-Time Text Update -->
     <script>
         function updateText() {
             const textInput = document.getElementById('textInput').value;
@@ -63,5 +164,6 @@
             tagText.textContent = textInput || "Tu texto irá aquí";
         }
     </script>
+
 </body>
 </html>
